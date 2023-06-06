@@ -1,27 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import AppButton from './components/Button';
+import { StatusBar } from "expo-status-bar";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import AllPlaces from "./screens/AllPlaces";
+import AddPlace from "./screens/AddPlace";
+
+const stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <AppButton
-      onPress={() => {
-        console.log("Button pressed!");
-      }}
-      title="Click Me!"
-    />
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <StatusBar style="dark" />
+      <NavigationContainer>
+        <stack.Navigator>
+          <stack.Screen name="AllPlaces" component={AllPlaces} />
+          <stack.Screen name="AddPlace" component={AddPlace} />
+        </stack.Navigator>
+      </NavigationContainer>
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
