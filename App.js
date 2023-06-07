@@ -19,7 +19,7 @@ export default function App() {
               backgroundColor: Colors.primary500,
             },
             headerTintColor: Colors.gray700,
-            contentStyle: {backgroundColor:Colors.gray700},
+            contentStyle: { backgroundColor: Colors.gray700 },
           }}
         >
           <stack.Screen
