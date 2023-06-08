@@ -12,7 +12,7 @@ const PlaceForm = () => {
 
   return (
     <ScrollView style={styles.form}>
-      <View >
+      <View>
         <Text style={styles.label}>Title</Text>
         <TextInput
           style={styles.input}
@@ -20,7 +20,7 @@ const PlaceForm = () => {
           value={enteredTitle}
         />
       </View>
-      <ImagePicker /> 
+      <ImagePicker />
     </ScrollView>
   );
 };
