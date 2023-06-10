@@ -8,9 +8,11 @@ import {
 } from "expo-location";
 import { useState } from "react";
 import { getMapPreview } from "../../util/location";
+import { useNavigation } from "@react-navigation/native";
 
 function LocationPicker() {
   const [pickedLocation, setPickedLocation] = useState();
+  const navigation = useNavigation();
   const [locationInformationInformation, requestPermission] =
     useForegroundPermissions();
   async function verifyPermissions() {
@@ -53,7 +55,9 @@ function LocationPicker() {
       />
     );
   }
-  function pickOnMapHandler() {}
+  function pickOnMapHandler() {
+    navigation.navigate('Map');
+  }
   return (
     <View>
       <View style={styles.mapPreview}>{locationPreview}</View>
@@ -88,6 +92,6 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: "100%",
-    borderRadius : 4 
+    borderRadius: 4,
   },
 });
