@@ -22,7 +22,7 @@ const PlaceForm = () => {
         />
       </View>
       <ImagePicker />
-      <LocationPicker /> 
+      <LocationPicker />
     </ScrollView>
   );
 };

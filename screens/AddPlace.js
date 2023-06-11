@@ -1,10 +1,7 @@
-
-import PlaceForm from '../components/Places/PlaceForm'
+import PlaceForm from "../components/Places/PlaceForm";
 
 const AddPlace = () => {
-  return (
-    <PlaceForm /> 
-  )
-}
+  return <PlaceForm />;
+};
 
-export default AddPlace
+export default AddPlace;
