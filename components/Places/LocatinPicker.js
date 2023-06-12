@@ -37,11 +37,14 @@ function LocationPicker({ onPickLocation }) {
   useEffect(() => {
     async function handleLocation() {
       if (pickedLocation) {
-       const address =  await getAddress(pickedLocation.lat, pickedLocation.lng);
-        onPickLocation({...pickedLocation , address:address});
+        const address = await getAddress(
+          pickedLocation.lat,
+          pickedLocation.lng
+        );
+        onPickLocation({ ...pickedLocation, address: address });
       }
     }
-    handleLocation()
+    handleLocation();
   }, [pickedLocation, onPickLocation]);
 
   async function verifyPermissions() {
