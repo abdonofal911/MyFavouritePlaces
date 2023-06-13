@@ -46,7 +46,7 @@ const ImagePicker = ({ onTakeImage }) => {
   }
 
   let imagePreview = <Text>NO image taken yet.</Text>;
-  
+
   if (pickedImage) {
     imagePreview = <Image style={styles.image} source={{ uri: pickedImage }} />;
   }
