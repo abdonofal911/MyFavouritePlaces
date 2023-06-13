@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import { Colors } from "../../constants/colors";
 import ImagePicker from "./ImagePicker";
@@ -8,19 +8,21 @@ import { place } from "../../models/place";
 
 const PlaceForm = ({ onCreatePlace }) => {
   const [enteredTitle, setEnteredTitle] = useState("");
-  const [pickedLocation, setPickedLocation] = useState("");
-  const [selectedImage, setSelectedImage] = useState("");
+  const [pickedLocation, setPickedLocation] = useState();
+  const [selectedImage, setSelectedImage] = useState();
 
   function changeTitleHandler(enteredText) {
     setEnteredTitle(enteredText);
+  }
+  
+  function takeImageHandler(imageUri) {
+    setSelectedImage(imageUri);
   }
 
   const pickLocationHandler = useCallback((location) => {
     setPickedLocation(location);
   }, []);
-  function takeImageHandler(imageUri) {
-    setSelectedImage(imageUri);
-  }
+  
 
   function savePlaceHandler() {
     const placeDate = new place(enteredTitle, selectedImage, pickedLocation);

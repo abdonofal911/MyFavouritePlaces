@@ -1,4 +1,4 @@
-import { Alert, Button, Image, StyleSheet, Text, View } from "react-native";
+import { Alert, Image, StyleSheet, Text, View } from "react-native";
 import {
   launchCameraAsync,
   useCameraPermissions,
@@ -10,6 +10,7 @@ import OutlinedButton from "../UI/OutlinedButton";
 
 const ImagePicker = ({ onTakeImage }) => {
   const [pickedImage, setPickedImage] = useState();
+
   const [cameraPermissionInformation, requestPermission] =
     useCameraPermissions();
 
@@ -45,6 +46,7 @@ const ImagePicker = ({ onTakeImage }) => {
   }
 
   let imagePreview = <Text>NO image taken yet.</Text>;
+  
   if (pickedImage) {
     imagePreview = <Image style={styles.image} source={{ uri: pickedImage }} />;
   }
