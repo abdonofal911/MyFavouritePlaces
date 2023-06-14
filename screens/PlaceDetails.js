@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ScrollView, Image, View, StyleSheet } from "react-native";
+import { ScrollView, Image, View, StyleSheet,Text } from "react-native";
 import OutlinedButton from "../components/UI/OutlinedButton";
 import { Colors } from "../constants/colors";
 
@@ -12,10 +12,10 @@ const PlaceDetails = ({ route }) => {
   }, [selectedPlaceId]);
   return (
     <ScrollView>
-      <Image style={styles.image} source={{ uri: fetchedPlace.imageUri }} />
+      <Image style={styles.image}  />
       <View style={styles.locationContainer}>
         <View style={styles.addressContainer}>
-          <Text style={styles.address}>{fetchedPlace.address}</Text>
+          <Text style={styles.address}>Address</Text>
         </View>
         <OutlinedButton icon="map" onPress={showOnMapHandler}>
           View on Map

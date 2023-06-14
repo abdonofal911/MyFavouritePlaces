@@ -65,7 +65,7 @@ export default function App() {
             }}
           />
           <stack.Screen name="Map" component={Map} />
-          <Stack.Screen
+          <stack.Screen
             name="PlaceDetails"
             component={PlaceDetails}
             options={{
