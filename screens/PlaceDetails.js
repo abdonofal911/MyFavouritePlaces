@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { ScrollView, Image, View, StyleSheet } from "react-native";
 import OutlinedButton from "../components/UI/OutlinedButton";
+import { Colors } from "../constants/colors";
 
 const PlaceDetails = ({ route }) => {
   function showOnMapHandler() {}

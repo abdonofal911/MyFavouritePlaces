@@ -9,6 +9,7 @@ import Map from "./screens/Map";
 import { init } from "./util/database";
 import AppLoading from "expo-app-loading";
 import React, { useState, useEffect } from "react";
+import PlaceDetails from "./screens/PlaceDetails";
 
 const stack = createNativeStackNavigator();
 
@@ -64,6 +65,13 @@ export default function App() {
             }}
           />
           <stack.Screen name="Map" component={Map} />
+          <Stack.Screen
+            name="PlaceDetails"
+            component={PlaceDetails}
+            options={{
+              title: 'Loading Place...',
+            }}
+          />
         </stack.Navigator>
       </NavigationContainer>
     </>
