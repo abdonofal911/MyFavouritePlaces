@@ -7,9 +7,8 @@ import IconButton from "./components/UI/IconButton";
 import { Colors } from "./constants/colors";
 import Map from "./screens/Map";
 import { init } from "./util/database";
-import AppLoading from 'expo-app-loading';
-import React, { useState ,useEffect } from 'react';
-
+import AppLoading from "expo-app-loading";
+import React, { useState, useEffect } from "react";
 
 const stack = createNativeStackNavigator();
 
