@@ -1,13 +1,18 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ScrollView, Image, View, StyleSheet, Text } from "react-native";
 import OutlinedButton from "../components/UI/OutlinedButton";
 import { Colors } from "../constants/colors";
-import { fetchPlaceDetails, fetchPlaces } from "../util/database";
-import { useState } from "react";
+import { fetchPlaceDetails } from "../util/database";
 
 const PlaceDetails = ({ route, navigation }) => {
   const [fetchedPlace, setFetchedPlace] = useState();
-  function showOnMapHandler() {}
+
+  function showOnMapHandler() {
+    navigation.navigate("Map", {
+      initialLat: fetchedPlace.location.lat,
+      initialLng: fetchedPlace.location.lng,
+    });
+  }
 
   const selectedPlaceId = route.params.placeId;
 
@@ -15,7 +20,9 @@ const PlaceDetails = ({ route, navigation }) => {
     async function loadPlaceData() {
       const place = await fetchPlaceDetails(selectedPlaceId);
       setFetchedPlace(place);
-      navigation.setOptions({ title: place.title });
+      navigation.setOptions({
+        title: place.title,
+      });
     }
     loadPlaceData();
   }, [selectedPlaceId]);
