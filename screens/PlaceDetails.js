@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ScrollView, Image, View, StyleSheet, Text } from "react-native";
+
 import OutlinedButton from "../components/UI/OutlinedButton";
 import { Colors } from "../constants/colors";
 import { fetchPlaceDetails } from "../util/database";

@@ -1,4 +1,5 @@
 import * as SQLite from "expo-sqlite";
+
 import { place } from "../models/place";
 
 const database = SQLite.openDatabase("places.db");
@@ -89,7 +90,7 @@ export function fetchPlaceDetails(id) {
   const promise = new Promise((resolve, reject) => {
     database.transaction((tx) => {
       tx.executeSql(
-        "SELECT * FROM places WHERE id = ?",
+        'SELECT * FROM places WHERE id = ?',
         [id],
         (_, result) => {
           const dbPlace = result.rows._array[0];
